@@ -1,0 +1,9 @@
+models:
+  - name: stg__customers
+    description: Staged customer data from our jaffle shop app.
+    columns:
+      - name: customer_id
+        description: Primary key for customers    
+        data_tests:
+          - unique
+          - not_null

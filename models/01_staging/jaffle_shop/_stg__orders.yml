@@ -1,0 +1,25 @@
+models:
+  - name: stg__orders
+    description: Staged customer data from our jaffle shop app.
+    columns:
+      - name: customer_id
+        description: Primary key for customers    
+        data_tests:
+          - unique
+          - not_null
+
+      - name: status
+        description : '{{doc("order_status")}}'
+        data_tests:
+          - accepted_values:
+              arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property.
+                values: ['placed', 'shipped', 'completed', 'returned_pending','returned']
+
+      - name: customer_id
+        data_tests:
+          - relationships:
+              arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property.
+                to: ref('customers')
+                field: id
+
+
