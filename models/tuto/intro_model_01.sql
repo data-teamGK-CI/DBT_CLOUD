@@ -1,1 +1,4 @@
-SELECT * FROM RAW.JAFFLE_SHOP.CUSTOMERS
+
+SELECT 
+    * 
+FROM {{ source('jaffle_shop', 'customers') }}
