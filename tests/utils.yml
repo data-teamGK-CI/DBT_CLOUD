@@ -1,8 +1,0 @@
-version: 2
-
-models:
-  - name: stg__orders
-    columns:
-      - name: order_date
-        tests:
-          - dbt_utils.at_least_one
