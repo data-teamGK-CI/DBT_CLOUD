@@ -5,3 +5,7 @@ select
     order_date,
     status,
 from {{ source('jaffle_shop', 'orders') }}
+-- {% if target.name =='default' %}
+-- where order_date < current_date()
+--  /* {{ target.dev }} */
+-- {% endif %} 

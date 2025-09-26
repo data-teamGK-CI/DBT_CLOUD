@@ -21,5 +21,9 @@ models:
               arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property.
                 to: ref('customers')
                 field: id
+      
+      - name: order_date
+        tests:
+          - dbt_utils.at_least_one
 
 
